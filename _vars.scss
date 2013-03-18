@@ -1,0 +1,86 @@
+/* =============================================================================
+   Colours
+   ========================================================================== */
+
+/* ==|== Colours =================
+   Global
+   ====================================== */
+
+$color-primary: ;
+$color-secondary: ;
+$color-tertiary: ;
+
+
+/* ==|== Colours =================
+   Text
+   ====================================== */
+
+$color-text: ;
+$color-subtext: ;
+$color-heading: ;
+$color-subheading: ;
+
+/* ==|== Colours =================
+   Links
+   ====================================== */
+
+$color-link-primary: ;
+$color-link-primary-hover: ;
+$color-link-primary-active: ;
+$color-link-secondary: ;
+$color-link-secondary-hover: ;
+$color-link-secondary-active: ;
+
+/* ==|== Colours =================
+   Buttons
+   ====================================== */
+
+$color-button-primary: ;
+$color-button-primary-hover: ;
+$color-button-primary-active: ;
+
+$color-button-secondary: ;
+$color-button-secondary-hover: ;
+$color-button-secondary-active: ;
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+$stack-reg: ;
+$stack-heading: ;
+
+/* =============================================================================
+   Column Widths
+   ========================================================================== */
+
+$margin: ;
+$span-1: ;
+$span-2: ;
+$span-3: ;
+$span-4: ;
+$span-5: ;
+$span-6: ;
+$span-7: ;
+$span-8: ;
+$span-9: ;
+$span-10: ;
+$span-11: ;
+$span-12: ;
+
+/* =============================================================================
+   Bezier Curves
+   ========================================================================== */
+
+// Use these for more exciting animations/transitions.
+//
+// Usage:
+//
+// @include cubic-bezier(#{$bezier-bounce}, 500ms, all);
+
+$bezier-bounce: 0.750, -0.170, 0.230, 1.190;
+$bezier-ease: 0.880, 0.090, 0.180, 0.900;
+
+
+
+

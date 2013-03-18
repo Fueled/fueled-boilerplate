@@ -1,0 +1,23 @@
+.btn {
+	background:$color-button-primary;
+	@include display-inline-block();
+	&:hover {
+		background:$color-button-primary-hover;
+	}
+	&:active,
+	&:focus,
+	&.btn__active {
+		background:$color-button-primary-active;
+	}
+	&.btn--secondary {
+		background:$color-button-secondary;
+		&:hover {
+			background:$color-button-secondary-hover;
+		}
+		&:active,
+		&:focus,
+		&.btn__active {
+			background:$color-button-secondary-active;
+		}
+	}
+}

@@ -1,0 +1,46 @@
+/* =============================================================================
+   Inputs
+   ========================================================================== */
+
+::-webkit-input-placeholder {
+
+}
+:-moz-placeholder { /* Firefox 18- */
+
+}
+::-moz-placeholder {  /* Firefox 19+ */
+
+}
+:-ms-input-placeholder {
+
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="search"],
+textarea {
+
+	&:focus {
+
+		&::-webkit-input-placeholder {
+
+		}
+		&:-moz-placeholder { /* Firefox 18- */
+
+		}
+		&::-moz-placeholder {  /* Firefox 19+ */
+
+		}
+		&:-ms-input-placeholder {
+
+		}
+	}
+}
+textarea {
+	resize:none;
+}
+input,textarea, button {
+	-webkit-appearance:none;
+	-webkit-border-radius:0px;
+}
