@@ -3,15 +3,15 @@
    ====================================== */
 
 ::-moz-selection {
-    background: ;
-	color: ;
+    background: $color-boilerplate-red;
+	color: $color-boilerplate-white;
     text-shadow: none;
 }
 
 ::selection {
-    background: ;
-	color: ;
-    text-shadow: none;
+	background: $color-boilerplate-red;
+	color: $color-boilerplate-white;
+	text-shadow: none;
 }
 
 /* ==|== Type =================
@@ -28,16 +28,6 @@ a {
 	&:focus {
 		color:$color-link-primary-active;
 		outline:none;
-	}
-}
-a.secondary {
-	color:$color-link-secondary;
-	&:hover {
-		color:$color-link-secondary-hover;
-	}
-	&:active,
-	&:focus {
-		color:$color-link-secondary-active;
 	}
 }
 
@@ -95,17 +85,13 @@ td {
 // Which would only set styles for h1, h2 and h3.
 
 #{headings()} {
-	color:$color-heading;
-	font-family:$stack-heading;
 	line-height:1;
 }
 
 #{headings(h1, h3)} {
-	color:$color-heading;
 	font-weight: bold;
 }
 #{headings(h4, h6)} {
-	color:$color-subheading;
 	font-weight: normal;
 }
 

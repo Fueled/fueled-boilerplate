@@ -26,7 +26,7 @@ html {
 	font-size:87.5%;
 }
 html, button, input, select, textarea {
-	color:$color-text;
+	color:$color-boilerplate-white;
 	font-family:$stack-reg;
 	@include font-smoothing(antialiased);
 }
@@ -39,6 +39,8 @@ img {
 	height:auto;
 	max-width:100%;
 }
+
+@import "_fueled";
 
 @import "_layout";
 @import "_type";

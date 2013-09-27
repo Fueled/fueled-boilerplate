@@ -6,67 +6,45 @@
    Global
    ====================================== */
 
-$color-primary: ;
-$color-secondary: ;
-$color-tertiary: ;
+$color-boilerplate-black: #161616;
+$color-boilerplate-red: #ae0000;
+$color-boilerplate-white: #f5f5f1;
+$color-boilerplate-grey: #525252;
+$color-boilerplate-bg: #252525;
 
 
 /* ==|== Colours =================
    Text
    ====================================== */
 
-$color-text: ;
-$color-subtext: ;
-$color-heading: ;
-$color-subheading: ;
+
 
 /* ==|== Colours =================
    Links
    ====================================== */
 
-$color-link-primary: ;
-$color-link-primary-hover: ;
-$color-link-primary-active: ;
-$color-link-secondary: ;
-$color-link-secondary-hover: ;
-$color-link-secondary-active: ;
+$color-link-primary: $color-boilerplate-red;
+$color-link-primary-hover: $color-boilerplate-white;
+$color-link-primary-active: $color-boilerplate-grey;
 
 /* ==|== Colours =================
    Buttons
    ====================================== */
 
-$color-button-primary: ;
-$color-button-primary-hover: ;
-$color-button-primary-active: ;
+$color-button-primary: $color-boilerplate-red;
+$color-button-primary-hover: lighten($color-boilerplate-red, 10%);
+$color-button-primary-active: $color-boilerplate-grey;
 
-$color-button-secondary: ;
-$color-button-secondary-hover: ;
-$color-button-secondary-active: ;
 
 /* =============================================================================
    Fonts
    ========================================================================== */
 
-$stack-reg: ;
-$stack-heading: ;
+$stack-reg: "Helvetica Neue", sans-serif;
 
 /* =============================================================================
    Column Widths
    ========================================================================== */
-
-$margin: ;
-$span-1: ;
-$span-2: ;
-$span-3: ;
-$span-4: ;
-$span-5: ;
-$span-6: ;
-$span-7: ;
-$span-8: ;
-$span-9: ;
-$span-10: ;
-$span-11: ;
-$span-12: ;
 
 /* =============================================================================
    Bezier Curves
