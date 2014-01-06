@@ -1,0 +1,58 @@
+/* =============================================================================
+	Grid
+============================================================================== */
+
+/**
+ *
+ * Syntax for grids
+ *
+ * 	<div class="grid">
+ * 		<div class="col col--3">
+ *			<p>Lorem Ipsum</p>
+ * 		<div><!--
+ * 	 --><div class="col col--6">
+ * 			<p>Pellentesque elim</p>
+ * 		</div><!--
+ * 	 --><div class="col col--3">
+ * 			<p>Dolor Sit</p>
+ * 		</div>
+ * 	</div>
+ *
+ * The comments immediately after each <div class="col"></div> element
+ * are vital for the grid to work.
+ *
+ */
+
+$grid-max-width: $layout-max-width;
+$grid-columns: 12;
+$grid-margin: 24;
+
+$grid-margin-percentage: percentage($grid-margin / $grid-max-width);
+$grid-column-width: ($grid-max-width - ($grid-margin * ($grid-columns - 1))) / $grid-columns;
+$grid-column-percentage: percentage($grid-column-width / $grid-max-width);
+
+
+/* ==|== Grid =================
+	Columns
+========================================== */
+
+
+
+.col {
+	display: inline-block;
+	vertical-align: top;
+
+	+ .col {
+		margin-left: $grid-margin-percentage;
+	}
+}
+
+/* ==|== Columns =================
+	12
+========================================== */
+
+@for $i from 1 through $grid-columns {
+	.col--#{$i} {
+		width: ($grid-column-percentage * $i) + ($grid-margin-percentage * ($i - 1));
+	}
+}

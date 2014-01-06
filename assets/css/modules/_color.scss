@@ -1,0 +1,26 @@
+/* =============================================================================
+	Color Module
+============================================================================== */
+
+/**
+ *
+ * All color variables should start with the color- prefix, and should
+ * be descriptive to the color. $color-primary-red is better than
+ * $color-primary, as it's easy to figure out exactly what the color
+ * is from the variable name.
+ *
+ */
+
+ /* ==|== Colors =================
+ 	Base
+ ========================================== */
+
+$color-white: #fff;
+$color-black: #1b1b1b;
+
+/* ==|== Colors =================
+	Elements
+========================================== */
+
+$color-background:$color-white;
+$color-text: $color-black;

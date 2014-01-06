@@ -1,0 +1,16 @@
+/* =============================================================================
+	Type
+============================================================================== */
+
+$font-default-size: 20;
+$font-default-line-height: 1.5;
+$font-stack-regular: "sans-serif";
+
+/* ==|== Type =================
+	Functions
+========================================== */
+
+@function em($target, $content: $font-default-size) {
+	@if $target == 0 { @return 0 }
+	@return $target / $content + 0em;
+}
