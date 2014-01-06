@@ -2,18 +2,11 @@
 	Partials
 ============================================================================== */
 
-// Resets, etc
+@import "_mixins";
+@import "_bezier";
+@import "_color";
 @import "_normalize";
-
-// Base styles
+@import "_type";
 @import "_base";
-@import "_images";
-@import "_lists";
-
-// Dimensionsal styles
-@import "_layout";
-@import "_grid";
-
-// UI partials
-
+@import "_utility";
 @import "_helpers";

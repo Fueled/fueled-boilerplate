@@ -1,0 +1,31 @@
+/* =============================================================================
+	Buttons
+============================================================================== */
+
+$color-btn-primary: #ae0000;
+$color-btn-primary-hover: #00ae00;
+$color-btn-primary-active: #0000ae;
+$color-btn-primary-text: #fff;
+
+/* ==|== Buttons =================
+	Primary
+========================================== */
+
+.btn {
+	background:$color-btn-primary;
+	color:$color-btn-primary-text;
+	display: inline-block;
+	padding:em(15) em(20);
+	transition:all .25s cubic-bezier(#{$bezier-nice});
+
+	&:hover {
+		background:$color-btn-primary-hover;
+		color:$color-btn-primary-text;
+	}
+
+	&:active,
+	&:focus {
+		background:$color-btn-primary-active;
+		color:$color-btn-primary-text;
+	}
+}
