@@ -1,0 +1,45 @@
+/* =============================================================================
+	Partials/Base SCSS File
+============================================================================== */
+
+* {
+	box-sizing:border-box;
+}
+
+html,body {
+	min-height:100%;
+}
+
+html {
+	background: $color-background;
+	font-size:percentage($font-default-size / 16);
+	overflow-y: scroll;
+}
+
+@include respond-to-min(120) {
+	html {
+		font-size:150%;
+	}
+}
+
+@include respond-to(64) {
+	html {
+		font-size:100%;
+	}
+}
+
+html,
+button,
+input,
+select,
+textarea {
+	color:$color-text;
+	font-family:$font-stack-regular;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+
+body {
+	font-size:1em;
+	line-height:$font-default-line-height;
+}

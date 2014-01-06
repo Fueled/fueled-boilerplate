@@ -16,21 +16,21 @@
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-	<link rel="stylesheet" href="css/screen.css" media="screen">
-	<link rel="stylesheet" href="css/print.css" media="print">
+	<link rel="stylesheet" href="assets/build/css/screen.min.css" media="screen">
+	<link rel="stylesheet" href="assets/build/css/print.css" media="print">
 	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body>
 	<!--[if lt IE 8]>
 		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
 	<![endif]-->
-	<header class="fld__header">
-		<div class="fld__wrap">
+	<header class="">
+		<div class="group">
 			<h1>Fueled Boilerplate</h1>
 		</div>
 	</header>
 
-	<section class="fld__wrap fld__page">
+	<section class="group">
 		<aside>
 			<ul>
 				<li>
@@ -49,10 +49,25 @@
 				<h2>Lists</h2>
 			</div>
 			<p>This is the Fueled Boilerplate.</p>
+
+			<div id="grid">
+				<h2>Grids</h2>
+			</div>
+			<div class="grid">
+				<div class="col col--3">
+					<p>Lorem ipsum</p>
+				</div><!--
+			 --><div class="col col--8">
+					<p>Lorem ipsum</p>
+				</div><!--
+			 --><div class="col col--1">
+					<p>Lorem Ipsum</p>
+				</div>
+			</div>
 		</main>
 	</section> <!-- .page -->
 
-	<footer>
+	<footer class="group">
 		<p>&copy; 2013 Lorem Ipsum.</p>
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
