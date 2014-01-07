@@ -1,0 +1,26 @@
+/* =============================================================================
+	Links
+============================================================================== */
+
+$color-link-primary: #ae0000;
+$color-link-primary-hover: #00ae00;
+$color-link-primary-active: #0000ae;
+
+/* ==|== Links =================
+	Primary
+========================================== */
+
+a {
+	color:$color-link-primary;
+	text-decoration: none;
+	transition:all .25s cubic-bezier(#{$bezier-nice});
+
+	&:hover {
+		color:$color-link-primary-hover;
+	}
+
+	&:active,
+	&:focus {
+		color:$color-link-primary-active;
+	}
+}
