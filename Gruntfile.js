@@ -101,13 +101,6 @@ module.exports = function(grunt) {
 				files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
 				tasks: ['compass:server', 'autoprefixer', 'cssmin', 'clean']
 			},
-			// css: {
-			// 	files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
-			// 	tasks: ['sass', 'autoprefixer', 'cssmin', 'clean'],
-			// 	options: {
-			// 		spawn: false
-			// 	}
-			// },
 			images: {
 				files: ['assets/images/**/*.{png,gif,jpg}', 'assets/images/*.{png,gif,jpg}'],
 				tasks: ['imagemin'],
