@@ -14,3 +14,24 @@ $font-stack-regular: "sans-serif";
 	@if $target == 0 { @return 0 }
 	@return $target / $content + 0em;
 }
+
+@function rem($target, $content: $font-default-size) {
+	@if $target == 0 { @return 0 }
+	@return $target / $content + 0rem;
+}
+
+/* ==|== Type =================
+	Mixins
+========================================== */
+
+@mixin font-size($value, $base: $font-default-size) {
+	$rem: $value/$base;
+	font-size:$value + px;
+	font-size:$rem + rem;
+}
+
+@mixin rem($property, $value, $base: $font-default-size) {
+	$rem: $value / $base;
+	#{$property}: $value + px;
+	#{$property}: $rem + rem;
+}

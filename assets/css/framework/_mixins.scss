@@ -104,12 +104,6 @@
 	width:100%;
 }
 
-@mixin font-size($value, $base: $size-base) {
-	$rem: $value/$base;
-	font-size:$value + px;
-	font-size:$rem + rem;
-}
-
 @mixin font-smoothing($value) {
 	font-smoothing:$value;
 	-webkit-font-smoothing:$value;
@@ -147,12 +141,6 @@
 	@media not all and (orientation:landscape) and (orientation:portrait) {
 		@content;
 	}
-}
-
-@mixin rem($property, $value, $base: $size-base) {
-	$rem: $value / $base;
-	#{$property}: $value + px;
-	#{$property}: $rem + rem;
 }
 
 @mixin respond-to($breakpoint, $unit: 'em') {
