@@ -97,6 +97,13 @@ module.exports = function(grunt) {
 					spawn: false
 				}
 			},
+			html: {
+				files: ['*.html', '**/*.html'],
+				tasks: [],
+				options: {
+					spawn: false
+				}
+			},
 			compass: {
 				files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
 				tasks: ['compass:server', 'autoprefixer', 'cssmin', 'clean']
