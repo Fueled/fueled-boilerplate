@@ -41,6 +41,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		modernizr: {
+			"devFile": "assets/js/modernizr/modernizr-2.6.2.min.js",
+			"outputFile": "assets/build/js/modernizr-custom.js"
+		},
+
 		cssmin: {
 			combine: {
 				files: {
@@ -128,5 +133,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin']);
 
-	grunt.registerTask('dev', ['connect', 'watch']);
+	grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
 };
