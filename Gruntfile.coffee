@@ -4,6 +4,15 @@ module.exports = (grunt) ->
     grunt.initConfig
         pkg: grunt.file.readJSON 'package.json'
 
+        files:
+            grunt:     ['gruntfile.js']
+            css:       ['assets/build/css/**/*.css', 'assets/build/screen.prefixed.css']
+            scss:      ['assets/css/**/*.scss']
+            js:        ['assets/js/vendor/**/*.js', 'assets/js/**/*.js']
+            coffee:    ['assets/js/coffee/**/*.coffee']
+            img:       ['assets/images/**/*.{png,jpeg,svg,jpg,gif}', 'assets/images/*.{png,jpeg,svg,jpg,gif}']
+
+
 # CSS processing
         sass: 
             dist: 
@@ -82,8 +91,8 @@ module.exports = (grunt) ->
 
         watch: 
             options:
-                livereload: 
-                    port: 9000 # Allows you to specify port incase you want to run multiple projects as once.
+                livereload: true
+                    #port: 9000 
                     #Allows you to connect an Https server and still have livereload 
                     #key: grunt.file.read 'path/to/ssl.key'
                     #cert: grunt.file.read 'path/to/ssl.crt'
@@ -91,11 +100,14 @@ module.exports = (grunt) ->
             coffee:
                 files: 'assets/js/coffee/**/*.coffee'
                 tasks: 'coffee'
+                options: 
+                    spawn: true
             js: 
-                files: 'assets/js/*/js'
+                files: 'assets/js/*.js'
                 tasks: ['concat', 'uglify', 'jshint']
                 options: 
                     spawn: false
+                    event: ['all']
 
             html: 
                 files: ['*.html', '**/*.html']
