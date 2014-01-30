@@ -59,19 +59,23 @@ module.exports = function(grunt) {
 		},
 
 		concat: {
-			dist: {
+			js: {
 				src: [
-					'assets/js/vendor/*.js',
-					'assets/js/*.js'
+					'assets/js/partials/*.js',
+					'assets/js/main.js'
 				],
 				dest: 'assets/build/js/main.js'
 			}
 		},
 
 		uglify: {
-			build: {
-				src: 'assets/build/js/main.js',
-				dest: 'assets/build/main.min.js'
+			dist: {
+				files: {
+					'assets/build/js/plugins.js' : 'assets/js/plugins/plugins.js',
+					'assets/build/js/main.min.js': 'assets/build/js/main.js'
+				}
+				//src: 'assets/build/js/main.js',
+				//dest: 'assets/build/js/main.min.js'
 			}
 		},
 
@@ -91,7 +95,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			scripts: {
-				files: 'assets/js/*/js',
+				files: ['assets/js/*.js', 'assets/js/**/*.js'],
 				tasks: ['concat', 'uglify', 'jshint'],
 				options: {
 					spawn: false
