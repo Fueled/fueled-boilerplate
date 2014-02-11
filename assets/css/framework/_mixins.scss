@@ -143,13 +143,17 @@
 	}
 }
 
-@mixin respond-to($breakpoint, $unit: 'em') {
-	@media only screen and (max-width:$breakpoint + $unit) {
+@mixin respond-to($breakpoint) {
+	$em: ($breakpoint / 16);
+	$unit: 'em';
+	@media only screen and (max-width:$em + $unit) {
 		@content;
 	}
 }
-@mixin respond-to-min($breakpoint, $unit: "em") {
-	@media only screen and (min-width:$breakpoint + $unit) {
+@mixin respond-to-min($breakpoint) {
+	$em: ($breakpoint / 16);
+	$unit: 'em';
+	@media only screen and (min-width:$em + $unit) {
 		@content;
 	}
 }
