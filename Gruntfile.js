@@ -41,6 +41,11 @@ module.exports = function(grunt) {
 			}
 		},
 
+		modernizr: {
+			"devFile": "assets/js/modernizr/modernizr-2.6.2.min.js",
+			"outputFile": "assets/build/js/modernizr-custom.js"
+		},
+
 		cssmin: {
 			combine: {
 				files: {
@@ -54,19 +59,23 @@ module.exports = function(grunt) {
 		},
 
 		concat: {
-			dist: {
+			js: {
 				src: [
-					'assets/js/vendor/*.js',
-					'assets/js/*.js'
+					'assets/js/partials/*.js',
+					'assets/js/main.js'
 				],
 				dest: 'assets/build/js/main.js'
 			}
 		},
 
 		uglify: {
-			build: {
-				src: 'assets/build/js/main.js',
-				dest: 'assets/build/main.min.js'
+			dist: {
+				files: {
+					'assets/build/js/plugins.js' : 'assets/js/plugins/plugins.js',
+					'assets/build/js/main.min.js': 'assets/build/js/main.js'
+				}
+				//src: 'assets/build/js/main.js',
+				//dest: 'assets/build/js/main.min.js'
 			}
 		},
 
@@ -86,8 +95,15 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 			scripts: {
-				files: 'assets/js/*/js',
+				files: ['assets/js/*.js', 'assets/js/**/*.js'],
 				tasks: ['concat', 'uglify', 'jshint'],
+				options: {
+					spawn: false
+				}
+			},
+			html: {
+				files: ['*.html', '**/*.html'],
+				tasks: [],
 				options: {
 					spawn: false
 				}
@@ -96,13 +112,6 @@ module.exports = function(grunt) {
 				files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
 				tasks: ['compass:server', 'autoprefixer', 'cssmin', 'clean']
 			},
-			// css: {
-			// 	files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
-			// 	tasks: ['sass', 'autoprefixer', 'cssmin', 'clean'],
-			// 	options: {
-			// 		spawn: false
-			// 	}
-			// },
 			images: {
 				files: ['assets/images/**/*.{png,gif,jpg}', 'assets/images/*.{png,gif,jpg}'],
 				tasks: ['imagemin'],
@@ -128,5 +137,5 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin']);
 
-	grunt.registerTask('dev', ['connect', 'watch']);
+	grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
 };

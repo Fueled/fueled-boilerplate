@@ -1,3 +1,4 @@
+var g = g || {};
 $(function() {
 
 	/* -----------------------
@@ -16,5 +17,5 @@ $(function() {
 		// Prevent the default browser event from firing
 		e.preventDefault();
 	});
-
+	g.c = new Class();
 });

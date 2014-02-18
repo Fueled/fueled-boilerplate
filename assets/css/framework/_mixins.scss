@@ -104,12 +104,6 @@
 	width:100%;
 }
 
-@mixin font-size($value, $base: $size-base) {
-	$rem: $value/$base;
-	font-size:$value + px;
-	font-size:$rem + rem;
-}
-
 @mixin font-smoothing($value) {
 	font-smoothing:$value;
 	-webkit-font-smoothing:$value;
@@ -149,19 +143,17 @@
 	}
 }
 
-@mixin rem($property, $value, $base: $size-base) {
-	$rem: $value / $base;
-	#{$property}: $value + px;
-	#{$property}: $rem + rem;
-}
-
-@mixin respond-to($breakpoint, $unit: 'em') {
-	@media only screen and (max-width:$breakpoint + $unit) {
+@mixin respond-to($breakpoint) {
+	$em: ($breakpoint / 16);
+	$unit: 'em';
+	@media only screen and (max-width:$em + $unit) {
 		@content;
 	}
 }
-@mixin respond-to-min($breakpoint, $unit: "em") {
-	@media only screen and (min-width:$breakpoint + $unit) {
+@mixin respond-to-min($breakpoint) {
+	$em: ($breakpoint / 16);
+	$unit: 'em';
+	@media only screen and (min-width:$em + $unit) {
 		@content;
 	}
 }

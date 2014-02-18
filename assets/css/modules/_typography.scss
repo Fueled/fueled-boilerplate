@@ -1,0 +1,54 @@
+/* =============================================================================
+	Typography
+============================================================================== */
+
+/* ==|== Typography =================
+	1. Headings
+========================================== */
+
+#{headings()} {
+	font-weight:normal;
+	line-height:1;
+}
+
+h1 {
+	@include font-size(60);
+	margin:rem(12) 0 rem(24);
+}
+
+h2 {
+	@include font-size(48);
+	margin:rem(12) 0 rem(24);
+}
+
+h3 {
+	@include font-size(38);
+	margin:rem(8) 0 rem(16);
+}
+
+h4 {
+	@include font-size(30);
+	margin:rem(8) 0 rem(16);
+}
+
+h5 {
+	@include font-size(24);
+	margin:rem(12) 0 rem(12);
+}
+
+h6 {
+	@include font-size(20);
+	margin:rem(10) 0 rem(10);
+}
+
+/* ==|== Typography =================
+	Paragraphs
+========================================== */
+
+p {
+	margin:1em auto;
+}
+
+.indented {
+	text-indent:2em;
+}
