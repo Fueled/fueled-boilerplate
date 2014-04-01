@@ -106,3 +106,7 @@ Session.vim
 .netrwhist
 
 wsgi_local.py
+
+# BUILD FOLDER
+assets/build
+node_modules
