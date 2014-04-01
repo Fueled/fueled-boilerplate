@@ -1,4 +1,5 @@
 function Class() {
+	/*
 	var self = this;
 
 	this.classListSupport = "classList" in document.documentElement;
@@ -44,4 +45,5 @@ function Class() {
 	this.toggle = function(element) {
 		console.log('sdfgs');
 	};
+	*/
 }

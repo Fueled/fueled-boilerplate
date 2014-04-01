@@ -18,4 +18,6 @@ $(function() {
 		e.preventDefault();
 	});
 	g.c = new Class();
+
+	g.img = new Img();
 });
