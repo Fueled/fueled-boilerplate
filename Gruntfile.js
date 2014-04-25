@@ -31,7 +31,7 @@ module.exports = function(grunt) {
 
 		autoprefixer: {
 			options: {
-				browsers: ['last 2 version']
+				browsers: ['last 3 versions']
 			},
 			multiple_files: {
 				expand: true,
@@ -44,6 +44,15 @@ module.exports = function(grunt) {
 		modernizr: {
 			"devFile": "assets/js/modernizr/modernizr-2.6.2.min.js",
 			"outputFile": "assets/build/js/modernizr-custom.js"
+		},
+
+		exec: {
+			serverup: {
+				command:'/Applications/MAMP/bin/start.sh'
+			},
+			serverdown: {
+				command: '/Applications/MAMP/bin/stop.sh'
+			}
 		},
 
 		cssmin: {
@@ -108,6 +117,13 @@ module.exports = function(grunt) {
 					spawn: false
 				}
 			},
+			php: {
+				files: ['*.php', '**/*.php'],
+				tasks: [],
+				options: {
+					spawn: false
+				}
+			},
 			compass: {
 				files: ['assets/css/*.scss', 'assets/css/**/*.scss'],
 				tasks: ['compass:server', 'autoprefixer', 'cssmin', 'clean']
@@ -137,5 +153,8 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin']);
 
-	grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
+	//grunt.registerTask('dev', ['connect', 'exec:serverup', 'modernizr', 'watch', 'exec:serverdown']);
+	//grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
+	grunt.registerTask('dev', ['exec:serverup', 'modernizr', 'watch', 'exec:serverdown']);
+	//grunt.registerTask('dev', ['modernizr', 'watch']);
 };
