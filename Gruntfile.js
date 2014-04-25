@@ -70,6 +70,7 @@ module.exports = function(grunt) {
 		concat: {
 			js: {
 				src: [
+					'assets/js/g.js',
 					'assets/js/partials/*.js',
 					'assets/js/main.js'
 				],
@@ -79,12 +80,23 @@ module.exports = function(grunt) {
 
 		uglify: {
 			dist: {
+				options: {
+					sourceMap: true,
+					sourceMapName: 'assets/build/js/main.min.map'
+				},
 				files: {
 					'assets/build/js/plugins.js' : 'assets/js/plugins/plugins.js',
 					'assets/build/js/main.min.js': 'assets/build/js/main.js'
 				}
 				//src: 'assets/build/js/main.js',
 				//dest: 'assets/build/js/main.min.js'
+				// options: {
+				// 	sourceMap: true,
+				// 	sourceMapName: 'assets/build/js/main.map'
+				// },
+				// files: {
+				// 	'assets/build/js/main.min.js': ['assets/build/js/main.js']
+				// }
 			}
 		},
 
@@ -153,8 +165,6 @@ module.exports = function(grunt) {
 
 	grunt.registerTask('default', ['concat', 'uglify', 'sass', 'imagemin']);
 
-	//grunt.registerTask('dev', ['connect', 'exec:serverup', 'modernizr', 'watch', 'exec:serverdown']);
-	//grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
-	grunt.registerTask('dev', ['exec:serverup', 'modernizr', 'watch', 'exec:serverdown']);
-	//grunt.registerTask('dev', ['modernizr', 'watch']);
+	grunt.registerTask('dev', ['connect', 'modernizr', 'watch']);
+	//grunt.registerTask('dev', ['exec:serverup', 'modernizr', 'watch', 'exec:serverdown']);
 };
