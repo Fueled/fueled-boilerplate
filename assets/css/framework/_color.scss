@@ -1,6 +1,6 @@
-/* =============================================================================
-	Color Module
-============================================================================== */
+/**
+ * Color SCSS File
+ */
 
 /**
  *
@@ -24,3 +24,21 @@ $color-black: #1b1b1b;
 
 $color-background:$color-white;
 $color-text: $color-black;
+
+/* ==|== Colors =================
+   Links
+====================================== */
+
+$color-link-primary: #ae0000;
+$color-link-primary-hover: #00ae00;
+$color-link-primary-active: #0000ae;
+
+
+/* ==|== Colors =================
+   Buttons
+====================================== */
+
+$color-btn-primary: #ae0000;
+$color-btn-primary-hover: #00ae00;
+$color-btn-primary-active: #0000ae;
+$color-btn-primary-text: #fff;

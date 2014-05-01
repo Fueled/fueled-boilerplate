@@ -1,11 +1,8 @@
-/* =============================================================================
-	Buttons
-============================================================================== */
-
-$color-btn-primary: #ae0000;
-$color-btn-primary-hover: #00ae00;
-$color-btn-primary-active: #0000ae;
-$color-btn-primary-text: #fff;
+/**
+ * Button SCSS Partial
+ *
+ * @requires framework/_type.scss, framework/_color.scss
+ */
 
 /* ==|== Buttons =================
 	Primary

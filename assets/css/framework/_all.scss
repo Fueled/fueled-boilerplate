@@ -2,11 +2,15 @@
 	Partials
 ============================================================================== */
 
-@import "_mixins";
-@import "_bezier";
-@import "_color";
-@import "_normalize";
-@import "_type";
-@import "_base";
-@import "_utility";
-@import "_helpers";
+/**
+ * Including SCSS Partial. Keeps screen.scss neater.
+ */
+
+@import "mixins";
+@import "bezier";
+@import "color";
+@import "normalize";
+@import "type";
+@import "base";
+@import "utility";
+@import "helpers";
