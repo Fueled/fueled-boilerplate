@@ -38,6 +38,12 @@ ol {
 	}
 }
 
+.list--inline--dot,
+.list--inline--pipe,
+.list--inline--slash {
+	@extend .list--inline;
+}
+
 .list--inline--dot {
 	li + li:before {
 		content:"• ";
