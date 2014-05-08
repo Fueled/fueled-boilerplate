@@ -39,6 +39,6 @@ g.demo = function() {
 	// For more complex sites, an init() function would need to be
 	// created which we could reference.
 	(function() {
-		console.log(self.demoFunction(), g, self);
+		//console.log(self.demoFunction(), g, self);
 	})();
 };
