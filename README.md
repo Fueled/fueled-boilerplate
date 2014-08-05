@@ -2,7 +2,7 @@
 
 The start point for all new frontend projects at Fueled. The project utilizes technologies and methods to make development easier, and more consistent across the team.
 
-The Fueled Boilerplate uses Grunt for task running, significantly speeding up development by automatically doing things like minimizing code, autoprefixing properties, and concatenating files.
+The Fueled Boilerplate uses Gulp for task running, significantly speeding up development by automatically doing things like minifying code, autoprefixing properties, and concatenating files.
 
 We also utilize SCSS/Compass, which allows us to do things like split up our SCSS files into more maintainable, obvious partials.
 
@@ -14,9 +14,9 @@ Follow these instructions for the first time you use the Boilerplate. This insta
     1. Alternatively, if you don't want to install the entire XCode package just to get access to the CLT (it's a 2.5GB download), you can grab the [OSX GCC Installer](https://github.com/kennethreitz/osx-gcc-installer) which gives you all the Command Line Tools you'll need.
     2. **Do not install both, this can cause issues**
 2. Install [NPM (Node Package Manager)](http://nodejs.org) from the Node.js homepage
-3. Head to [the Grunt website](http://gruntjs.com/getting-started) and follow the instructions to install Grunt
-    1. open Terminal and run `sudo npm install -g grunt-cli` (you'll be asked for your password)
-    2. That should install everything you'll need to make Grunt work.
+3. Head to [the Gulp Github repo](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md#getting-started) and follow the instructions to install Gulp
+    1. open Terminal and run `sudo npm install -g gulp` (you'll be asked for your password)
+    2. That should install everything you'll need to make Gulp work.
 4. Install [RVM](https://rvm.io/) so we can manage which version of Ruby we are currently running.
     1. RVM (Ruby Version Manager) provides an easy way to switch between Ruby versions. You can install it by running `\curl -sSL https://get.rvm.io | bash -s stable` in Terminal.
     2. Once it's installed, install & start using Ruby version 1.9.3. You can do this by running the following commands:
