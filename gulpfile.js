@@ -84,6 +84,7 @@ gulp.task('all-js', function() {
 gulp.task('webserver', function() {
 	return gulp.src('public')
 		.pipe(webserver({
+			host: 'rob.local',
 			livereload: true,
 			directoryListing: false,
 			port: 8000
@@ -96,4 +97,9 @@ gulp.task('default', ['webserver'], function() {
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
 });
+
+gulp.task('build', function() {
+	runSequence('scripts', 'styles', 'images', 'fonts', 'ads');
+});
+
 
