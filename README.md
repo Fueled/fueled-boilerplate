@@ -69,7 +69,7 @@ Once you've got it all installed, you'll need to run the gulp task to watch for 
     $ gulp
     ```
 
-    Gulp build will run each of the build tasks as if each has had a change made to it. Helpful for when pulling down after changes have been made by another party/elsewhere.
+Gulp build will run each of the build tasks as if each has had a change made to it. Helpful for when pulling down after changes have been made by another party/elsewhere.
 
     ``` bash
     $ gulp build
