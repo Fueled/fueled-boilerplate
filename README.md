@@ -61,6 +61,21 @@ To create a new Boilerplate project, clone the Github repository into the chosen
 
     This may take a while, there's quite a few things to install.
 
+## Kicking off the gulp
+
+Once you've got it all installed, you'll need to run the gulp task to watch for changes and run the various parts of gulfile.js
+
+    ``` bash
+    $ gulp
+    ```
+
+    Gulp build will run each of the build tasks as if each has had a change made to it. Helpful for when pulling down after changes have been made by another party/elsewhere.
+
+    ``` bash
+    $ gulp build
+    ```
+
+
 ## Working with the Fueled Boilerplate
 
 The Fueled Boilerplate is set up to encourage best practices and – crucially – maintainability of code.
