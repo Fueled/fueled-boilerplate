@@ -6,9 +6,9 @@ The Fueled Boilerplate uses Gulp for task running, significantly speeding up dev
 
 We also utilize SCSS/Compass, which allows us to do things like split up our SCSS files into more maintainable, obvious partials.
 
-## Setting up the Boilerplate ##
+## First time setting up the Boilerplate ##
 
-Follow these instructions for the first time you use the Boilerplate. This installs all the underlying dependencies needed to run the Boilerplate. Once these are installed, you should be able to use the Fueled Boilerplate as many times as you like.
+Follow these instructions for the **first time** you use the Boilerplate. This installs all the underlying dependencies needed to run the Boilerplate. Once these are installed, you should be able to use the Fueled Boilerplate as many times as you like.
 
 1. Install XCode (available from the Mac App Store for free), and then install the Command Line Tools (CLT). Details on how to do this [are available here, depending on your Xcode/OS X verison](http://stackoverflow.com/questions/9329243/xcode-4-4-and-later-install-command-line-tools)
     1. Alternatively, if you don't want to install the entire XCode package just to get access to the CLT (it's a 2.5GB download), you can grab the [OSX GCC Installer](https://github.com/kennethreitz/osx-gcc-installer) which gives you all the Command Line Tools you'll need.
