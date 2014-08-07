@@ -81,6 +81,15 @@ gulp.task('all-js', function() {
 	runSequence('plugins', 'scripts');
 });
 
+gulp.task('fonts', function() {
+	return gulp.src('assets/fonts/*')
+		.pipe(gulp.dest('public/assets/fonts'))
+		.pipe(notify({
+			message: 'Fonts task complete',
+			onLast: true
+		}))
+})
+
 gulp.task('webserver', function() {
 	return gulp.src('public')
 		.pipe(webserver({
@@ -96,6 +105,7 @@ gulp.task('default', ['webserver'], function() {
 	gulp.watch('app/assets/css/**/*.scss', ['styles']);
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
+	gulp.watch('assets/fonts/*', ['fonts']);
 });
 
 gulp.task('build', function() {
