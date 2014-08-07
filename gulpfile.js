@@ -84,7 +84,7 @@ gulp.task('all-js', function() {
 gulp.task('webserver', function() {
 	return gulp.src('public')
 		.pipe(webserver({
-			host: 'rob.local',
+			host: '0.0.0.0',
 			livereload: true,
 			directoryListing: false,
 			port: 8000
