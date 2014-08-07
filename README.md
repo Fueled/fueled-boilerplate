@@ -4,7 +4,7 @@ The start point for all new frontend projects at Fueled. The project utilizes te
 
 The Fueled Boilerplate uses Gulp for task running, significantly speeding up development by automatically doing things like minifying code, autoprefixing properties, and concatenating files.
 
-We also utilize SCSS/Compass, which allows us to do things like split up our SCSS files into more maintainable, obvious partials.
+We also utilize SCSS, which allows us to do things like split up our SCSS files into more maintainable, obvious partials.
 
 ## First time setting up the Boilerplate ##
 
@@ -23,10 +23,8 @@ Follow these instructions for the **first time** you use the Boilerplate. This i
         1. `rvm get head`
         2. `rvm install 1.9.3 --with-gcc=clang`
         3. `rvm use 1.9.3`
-5. Install [SASS](http://sass-lang.com/install). SASS is the framework upon which SCSS/Compass is based. It's a Ruby gem, and so installation is fairly straight forward.
+5. Install [SASS](http://sass-lang.com/install). SASS is the framework upon which SCSS is based. It's a Ruby gem, and so installation is fairly straight forward.
     1. Run `sudo gem install sass` to install SASS.
-6. Install [Compass](http://compass-style.org/install/).
-    1. Run `sudo gem install compass` to install Compass.
 
 Looks like a lot, but it should be relatively straight forward!
 
