@@ -107,22 +107,20 @@ $font-stack-header: 	"sans-serif";
  * if Font-number-2 is an italic weight put italic etc
 **/
 
+@mixin load-fonts($fonts-total,$fonts-to-load,$fonts-to-load-style) {
 
-$fonts-total: 0;
-$fonts-to-load: Font-number-1, Font-number-2;
-$fonts-to-load-style: normal, italic;
-
-@while $fonts-total > 0  {
-	$font-face: nth($fonts-to-load, $fonts-total);
-	$font-style: nth($fonts-to-load-style, $fonts-total);
-	@font-face {
-	  font-family: #{$font-face}; font-style: #{$font-style}; font-weight: normal;
-	  src: url('../fonts/#{$font-face}.eot');
-	  src: url('../fonts/#{$font-face}.eot?') format('eot'),
-	       url('../fonts/#{$font-face}.woff') format('woff'),
-	       url('../fonts/#{$font-face}.ttf')  format('truetype');
+	@while $fonts-total > 0  {
+		$font-face: nth($fonts-to-load, $fonts-total);
+		$font-style: nth($fonts-to-load-style, $fonts-total);
+		@font-face {
+		  font-family: #{$font-face}; font-style: #{$font-style}; font-weight: normal;
+		  src: url('../fonts/#{$font-face}.eot');
+		  src: url('../fonts/#{$font-face}.eot?') format('eot'),
+		       url('../fonts/#{$font-face}.woff') format('woff'),
+		       url('../fonts/#{$font-face}.ttf')  format('truetype');
+		}
+		$fonts-total: $fonts-total - 1;
 	}
-	$fonts-total: $fonts-total - 1;
 }
 
 /* ==|== Type =================
