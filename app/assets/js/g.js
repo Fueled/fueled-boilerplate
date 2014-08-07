@@ -2,7 +2,12 @@
 var g = g || {};
 
 // Create an array of the partials we're including in the g object
-g.partials = ['demo'];
+// 		Ensure that these are added on separate lines so as to allow for
+// 		easier version controlling when multiple users are collaborating
+// 		on the JS simultaneously.
+g.partials = [
+	'demo'
+];
 
 // This _init function is the function which kicks everything off when
 // the document is ready.
