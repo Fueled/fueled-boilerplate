@@ -11,6 +11,15 @@ g.demo = function() {
 	// We create a reference to the function, so we can easily extend
 	var self = g.demo;
 
+	// An example of the selectors that might be called in the script
+	// 		Note the use of the abstracted data-js attribute rather than a CSS class or ID,
+	// 		this allows quick changes within the markup without having to amend the
+	// 		selectors here.
+	// 		e.g. <a href="#" class="nav__toggle" data-js="toggle-navigation">Menu</a>
+	self.selectors = {
+		toggleTrigger = "[data-js='toggle-navigation']"
+	}
+
 	// An example of an extended object
 	self.demoObject = {
 		a: 'string 1',
@@ -27,7 +36,7 @@ g.demo = function() {
 	};
 
 	// An example of a local function
-	function localFunction() {
+	self.localFunction = function localFunction() {
 		return 'this is a local function';
 	}
 
