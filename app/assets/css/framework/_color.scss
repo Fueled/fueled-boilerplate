@@ -5,9 +5,11 @@
 /**
  *
  * All color variables should start with the color- prefix, and should
- * be descriptive to the color. $color-primary-red is better than
+ * be descriptive to the color. $color-primary-accent is better than
  * $color-primary, as it's easy to figure out exactly what the color
- * is from the variable name.
+ * is from the variable name. Avoid using specific colours for variables
+ * as these may change significantly during the build and $color-primary-red
+ * may no longer be red, but instead blue.
  *
  */
 
