@@ -42,7 +42,7 @@ To create a new Boilerplate project, clone the Github repository into the chosen
 2. Clone **Fueled Boilerplate** into a new directory called `todo-app`
 
     ``` bash
-    $ git clone https://github.com/mct-fueled/fueled-boilerplate.git todo-app
+    $ git clone https://github.com/Fueled/fueled-boilerplate.git todo-app
     ```
 
 3. You'll now have a Fueled Boilerplate project set up in `~/Sites/todo-app`.
