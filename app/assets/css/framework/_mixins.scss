@@ -76,3 +76,33 @@
 		@content;
 	}
 }
+
+@mixin hyphenate() {
+	// Browser fixes for hyphenation – be careful in Chrome though as this breaks without hyphens
+	// (current v36)
+	word-break: break-all;
+	word-wrap: break-word;
+	word-break: break-word;
+	hyphens: auto;
+}
+
+@mixin placeholder($placeholderSelector,$placeholderColour) {
+	// To be used as @include placeholder(.selector input,#ff4444)
+	// Allows repetition in separating out the input placeholder styling
+	#{$placeholderSelector}::-webkit-input-placeholder {
+	   color:$placeholderColour;
+	   text-overflow: ellipsis;
+	}
+	#{$placeholderSelector}-moz-placeholder { /* Firefox 18- */
+	   color:$placeholderColour;
+	   text-overflow: ellipsis;
+	}
+	#{$placeholderSelector}::-moz-placeholder {  /* Firefox 19+ */
+	   color:$placeholderColour;
+	   text-overflow: ellipsis;
+	}
+	#{$placeholderSelector}:-ms-input-placeholder {
+	   color:$placeholderColour;
+	   text-overflow: ellipsis;
+	}
+}
