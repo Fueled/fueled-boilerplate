@@ -14,8 +14,9 @@ $font-default-size: 20;
 // Our base line height.
 $font-default-line-height: 1.5;
 
-// Our base font stack.
-$font-stack-regular: "sans-serif";
+// Our base font stacks.
+$font-stack-regular: 	"sans-serif";
+$font-stack-header: 	"sans-serif";
 
 /* ==|== Type =================
 	Functions
@@ -91,4 +92,65 @@ $font-stack-regular: "sans-serif";
 	$rem: $value/$base;
 	font-size:$value + px;
 	font-size:$rem + rem;
+}
+
+
+/* ==|== Type =================
+	Load CSS based font-families
+========================================== */
+
+/**
+ * Loads in the CSS font-face declarations based on a Sass list of fonts and their styles
+ * Set the number of fonts that you want to load in in $fonts-total
+ * Set the fonts themselves and make sure they're in the assets/fonts folder
+ * Set the styles for the fonts, if Font-number-1 is a regular weight put normal,
+ * if Font-number-2 is an italic weight put italic etc
+**/
+
+
+$fonts-total: 0;
+$fonts-to-load: Font-number-1, Font-number-2;
+$fonts-to-load-style: normal, italic;
+
+@while $fonts-total > 0  {
+	$font-face: nth($fonts-to-load, $fonts-total);
+	$font-style: nth($fonts-to-load-style, $fonts-total);
+	@font-face {
+	  font-family: #{$font-face}; font-style: #{$font-style}; font-weight: normal;
+	  src: url('../fonts/#{$font-face}.eot');
+	  src: url('../fonts/#{$font-face}.eot?') format('eot'),
+	       url('../fonts/#{$font-face}.woff') format('woff'),
+	       url('../fonts/#{$font-face}.ttf')  format('truetype');
+	}
+	$fonts-total: $fonts-total - 1;
+}
+
+/* ==|== Type =================
+	CSS3 OT font-feature-settings
+========================================== */
+
+/**
+ * Gets the correct CSS3 font-feature-settings to deal with the cross-browser skullduggery
+ * Use the syntax @include font-feature-settings(kern liga clig);
+ * See http://blog.webink.com/opentype-features-css/ for full list of them
+ * But make sure the typeface you're using has the features otherwise they won't show.
+**/
+
+@mixin font-feature-settings($feature-list: false) {
+	@if $feature-list
+	{
+		$standard: ();
+		$old-moz: ();
+		@each $feature in $feature-list
+		{
+			$standard: append( $standard, '#{$feature}' 1, comma );
+			$old-moz: append( $old-moz, '#{$feature}=1', comma );
+		}
+		-moz-font-feature-settings: $old-moz;
+		-moz-font-feature-settings: $standard;
+		-ms-font-feature-settings: $standard;
+		-o-font-feature-settings: $standard;
+		-webkit-font-feature-settings: $standard;
+		font-feature-settings: $standard;
+	}
 }
