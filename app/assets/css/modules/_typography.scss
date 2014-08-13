@@ -16,11 +16,15 @@
  * if Font-number-2 is an italic weight put italic etc
 **/
 
+/**
+ * Only include this if you've got local fonts
+ *
 $fonts-total: 0;
 $fonts-to-load: Font-number-1, Font-number-2;
 $fonts-to-load-style: normal, italic;
 @include load-fonts;
-
+ *
+ */
 
 /* ==|== Typography =================
 	1. Headings

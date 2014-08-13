@@ -17,7 +17,7 @@ g.demo = function() {
 	// 		selectors here.
 	// 		e.g. <a href="#" class="nav__toggle" data-js="toggle-navigation">Menu</a>
 	self.selectors = {
-		toggleTrigger = "[data-js='toggle-navigation']"
+		toggleTrigger: "[data-js='toggle-navigation']"
 	}
 
 	// An example of an extended object
@@ -36,7 +36,7 @@ g.demo = function() {
 	};
 
 	// An example of a local function
-	self.localFunction = function localFunction() {
+	function localFunction() {
 		return 'this is a local function';
 	}
 
