@@ -82,7 +82,7 @@ gulp.task('all-js', function() {
 });
 
 gulp.task('fonts', function() {
-	return gulp.src('assets/fonts/*')
+	return gulp.src('app/assets/fonts/*')
 		.pipe(gulp.dest('public/assets/fonts'))
 		.pipe(notify({
 			message: 'Fonts task complete',
