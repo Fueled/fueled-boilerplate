@@ -103,6 +103,7 @@ gulp.task('webserver', function() {
 gulp.task('default', ['webserver'], function() {
 	gulp.watch(['app/assets/js/**/*.js'], ['scripts']);
 	gulp.watch('app/assets/css/**/*.scss', ['styles']);
+	// gulp.watch('app/assets/css/*.css', ['regularCSS']); // Uncomment to allow uncompiled CSS files to be used.
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
 	gulp.watch('app/assets/fonts/*', ['fonts']);
