@@ -88,6 +88,20 @@ gulp.task('fonts', function() {
 			message: 'Fonts task complete',
 			onLast: true
 		}))
+});
+
+/*
+	regularCSS allows us to include CSS files that might not be able to be used within the .scss files
+	Ensure to uncomment the gulp watch task and regularCSS object from the gulp build array.
+*/
+
+gulp.task('regularCSS', function() {
+	return gulp.src('app/assets/css/*.css')
+		.pipe(gulp.dest('public/assets/css'))
+		.pipe(notify({
+			message: 'Regular CSS task complete',
+			onLast: true
+		}))
 })
 
 gulp.task('webserver', function() {
