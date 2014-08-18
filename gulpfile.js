@@ -105,7 +105,7 @@ gulp.task('default', ['webserver'], function() {
 	gulp.watch('app/assets/css/**/*.scss', ['styles']);
 	gulp.watch('app/assets/images/**/*', ['images']);
 	gulp.watch('app/**/*.html', ['html']);
-	gulp.watch('assets/fonts/*', ['fonts']);
+	gulp.watch('app/assets/fonts/*', ['fonts']);
 });
 
 gulp.task('build', function() {
