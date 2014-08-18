@@ -29,6 +29,9 @@ gulp.task('styles', function() {
 			style: 'expanded'
 		}))
 		.pipe(autoprefixer('last 2 version', 'ie 10'))
+		.pipe(rename({
+			suffix: '.f' // Suffixed with .f so as to avoid any conflicts if RegularCSS files are called screen.min.css or screen.css
+		}))
 		.pipe(gulp.dest('public/assets/css'))
 		.pipe(rename({
 			suffix: '.min'
