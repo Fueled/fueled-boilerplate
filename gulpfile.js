@@ -124,7 +124,14 @@ gulp.task('default', ['webserver'], function() {
 });
 
 gulp.task('build', function() {
-	runSequence('scripts', 'styles', 'images', 'fonts', 'ads');
+	runSequence(
+		'scripts',
+		'styles',
+		// 'regularCSS' // Uncomment to allow uncompiled CSS files to be used.
+		'images',
+		'html',
+		'fonts'
+		);
 });
 
 
