@@ -28,28 +28,33 @@ $fonts-to-load-style: normal, italic;
 ========================================== */
 
 h1, h2, h3, h4, h5, h6 {
+	font-family:$font-stack-header; // Exclude if entire site based in one font-family
 	font-weight:normal;
-	line-height:1;
+	line-height:$font-header-line-height;
 }
 
 h1 {
-	@include font-size(60);
-	margin:em(12, 60) 0 em(24, 60);
+	@include font-size(42);
+	margin:em(24, 42) 0 em(12, 42);
+	@include respond-to-min($bp-tiny) {
+		@include font-size(48);
+		margin:em(24, 48) 0 em(24, 48);
+	}
 }
 
 h2 {
 	@include font-size(48);
-	margin:rem(12, 48) 0 em(24, 48);
+	margin:rem(24, 48) 0 em(12, 48);
 }
 
 h3 {
 	@include font-size(38);
-	margin:em(8, 38) 0 em(16, 38);
+	margin:em(16, 38) 0 em(8, 38);
 }
 
 h4 {
 	@include font-size(30);
-	margin:em(8, 30) 0 em(16, 30);
+	margin:em(18, 30) 0 em(8, 30);
 }
 
 h5 {
@@ -67,7 +72,7 @@ h6 {
 ========================================== */
 
 p {
-	margin:1em auto;
+	margin:0 auto em(10,20);
 }
 
 .indented {
