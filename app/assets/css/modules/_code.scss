@@ -1,0 +1,7 @@
+pre {
+	@include font-size(16);
+	background:$color-black;
+	color:$color-white;
+	display: block;
+	padding:em(10,16);
+}
