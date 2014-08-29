@@ -13,9 +13,10 @@ $font-default-size: 20;
 
 // Our base line height.
 $font-default-line-height: 1.5;
+$font-header-line-height: 1.2;
 
 // Our base font stacks.
-$font-stack-regular: 	"sans-serif";
+$font-stack-regular: 	Georgia, "serif";
 $font-stack-header: 	"sans-serif";
 
 /* ==|== Type =================
@@ -93,7 +94,6 @@ $font-stack-header: 	"sans-serif";
 	font-size:$value + px;
 	font-size:$rem + rem;
 }
-
 
 /* ==|== Type =================
 	Load CSS based font-families
