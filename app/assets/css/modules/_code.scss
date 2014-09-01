@@ -6,4 +6,7 @@ pre {
 	padding:rem(5) rem(10);
 	white-space: pre-line;
 	margin:rem(10) auto;
+	code {
+		font-size:0.8em;
+	}
 }
