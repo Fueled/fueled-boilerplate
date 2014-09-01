@@ -132,6 +132,28 @@ $font-stack-header: 	"sans-serif";
 	font-size:$em + rem;
 }
 
+@mixin font-sizes($sizes) {
+	// Grab the base font value for setting the rems
+	$base: $font-default-size;
+		// Loop through the Map of the sizes
+    @each $font-break, $font-num in $sizes {
+    	// Set the rem value
+    	$rem: $font-num/$base;
+    	// Check if we're looking for the IE8 fallback
+    	@if $font-break == 0 {
+    		font-size:$font-num + px;
+				font-size:$rem + rem;
+    	}
+    	@else {
+    		// Stick in the min-width breakpoint from each of the maps
+    		@include respond-to-min($font-break) {
+	        font-size:$font-num + px;
+					font-size:$rem + rem;
+	      }
+    	}
+    }
+}
+
 
 /* ==|== Type =================
 	Load CSS based font-families
