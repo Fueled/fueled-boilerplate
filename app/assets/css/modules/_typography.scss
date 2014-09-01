@@ -71,8 +71,13 @@ h6 {
 	Paragraphs
 ========================================== */
 
+%paragraph {
+	@include font-sizes((0: 16, $bp-tiny: 18, $bp-small: 20));
+	margin:0 auto rem(10);
+}
 p {
 	margin:0 auto em(10,20);
+	@extend %paragraph;
 }
 
 .indented {

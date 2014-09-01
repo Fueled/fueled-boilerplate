@@ -1,5 +1,5 @@
 pre {
-	@include font-size(16);
+	@extend %paragraph;
 	background:$color-black;
 	color:$color-white;
 	display: block;
