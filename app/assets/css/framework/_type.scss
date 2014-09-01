@@ -76,6 +76,39 @@ $font-stack-header: 	"sans-serif";
 	@return $target / $content + 0rem;
 }
 
+/**
+ * This takes a property and coresponding pixel value(s) and outputs
+ * rems and px fallback code
+
+ * @param val $property 	The CSS property that you're using (e.g. margin)
+ * @param int $values 		The value(s) that you want converted to rems (e.g
+													10, 0, 20)
+ */	
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1); // Required by rempx mixin
+}
+
+@mixin rempx($property, $values...) {
+	$base: $font-default-size;
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value}px;
+    $remValues: #{$remValues + $value/$base}rem;
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
+}
+
 /* ==|== Type =================
 	Mixins
 ========================================== */
