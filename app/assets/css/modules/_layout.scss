@@ -4,9 +4,6 @@
  * @requires framework/_type.scss
  */
 
-$layout-max-width: 1200;
-$layout-max-width-suffix: em($layout-max-width);
-
 .group {
 	margin:0 auto;
 	max-width:$layout-max-width-suffix;

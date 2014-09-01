@@ -6,11 +6,12 @@
  * Including SCSS Partial. Keeps screen.scss neater.
  */
 
+@import "variables";
+
 @import "mixins";
 @import "bezier";
 @import "color";
 @import "normalize";
 @import "type";
 @import "base";
-@import "utility";
 @import "helpers";
