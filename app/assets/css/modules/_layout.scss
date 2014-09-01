@@ -6,6 +6,6 @@
 
 .group {
 	margin:0 auto;
-	max-width:$layout-max-width-suffix;
+	max-width:rem($layout-max-width);
 	width:93.75%;
 }

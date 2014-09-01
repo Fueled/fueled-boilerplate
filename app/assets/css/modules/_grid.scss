@@ -49,17 +49,17 @@
 }
 
 .grid {
-    margin: 0 em(-($grid-gutter/2));
+    margin: 0 rem(-($grid-gutter/2));
 }
 .grid__unit {
     display: inline-block;
-    padding: 0 em($grid-gutter/2);
+    padding: 0 rem($grid-gutter/2);
     vertical-align: top;
     width:100%;
     .module-name & {
-        @include grid-column((450: 1, 750: 2, 1100: 4));
+        @include grid-column(($bp-tiny: 1, $bp-small: 2, $bp-large: 4));
     }
     .module-name-2 & {
-        @include grid-column((450: 2, 750: 2, 950: 3, 1200: 6));
+        @include grid-column(($bp-tiny: 2, $bp-small: 2, $bp-mid: 3, $bp-large: 6));
     }
 }

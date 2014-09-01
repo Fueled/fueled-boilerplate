@@ -3,6 +3,7 @@ pre {
 	background:$color-black;
 	color:$color-white;
 	display: block;
-	padding:em(10,16);
+	padding:rem(5) rem(10);
 	white-space: pre-line;
+	margin:rem(10) auto;
 }

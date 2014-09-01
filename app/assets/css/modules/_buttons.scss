@@ -12,7 +12,7 @@
 	background:$color-btn-primary;
 	color:$color-btn-primary-text;
 	display: inline-block;
-	padding:em(15) em(20);
+	padding:rem(15) rem(20);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
 
 	&:hover {
