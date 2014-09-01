@@ -40,6 +40,13 @@
 *   }
 */
 
+@mixin grid-column($cols) {
+    @each $col-break, $col-num in $cols {
+        @include respond-to-min($col-break) {
+            width: (100%/ $col-num);
+        }
+    }
+}
 
 .grid {
     margin: 0 em(-($grid-gutter/2));

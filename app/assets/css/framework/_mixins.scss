@@ -84,13 +84,3 @@
 	word-break: break-word;
 	hyphens: auto;
 }
-
-
-// Required by the _grid.scss file
-@mixin grid-column($cols) {
-	@each $col-break, $col-num in $cols {
-		@include respond-to-min($col-break) {
-			width: (100%/ $col-num);
-		}
-	}
-}
