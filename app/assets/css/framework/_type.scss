@@ -67,8 +67,8 @@ $font-stack-header: 	"sans-serif";
 
  * @param int $target 	The pixel value you're converting.
  * @param int $content 	The base rem value. If no value
- *						is provided, the $font-default-size value is
- *						used.
+ *											is provided, the $font-default-size value is
+ *											used.
  */
 
 @function rem($target, $content: $font-default-size) {
