@@ -91,7 +91,6 @@ $font-stack-header: 	"sans-serif";
 
 @mixin font-size($value, $base: $font-default-size) {
 	$rem: $value/$base;
-	font-size:$value + px;
 	font-size:$rem + rem;
 }
 
