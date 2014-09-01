@@ -28,6 +28,7 @@ $fonts-to-load-style: normal, italic;
 ========================================== */
 
 h1, h2, h3, h4, h5, h6 {
+	// @extend %hyphenated;
 	font-family:$font-stack-header; // Exclude if entire site based in one font-family
 	font-weight:normal;
 	line-height:$font-header-line-height;

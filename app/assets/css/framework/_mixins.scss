@@ -76,11 +76,3 @@
 		@content;
 	}
 }
-
-@mixin hyphenate() {
-	// Browser fixes for hyphenation – be careful in Chrome though as this breaks without hyphens (current v36)
-	word-break: break-all;
-	word-wrap: break-word;
-	word-break: break-word;
-	hyphens: auto;
-}
