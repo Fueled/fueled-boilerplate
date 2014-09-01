@@ -126,6 +126,12 @@ $font-stack-header: 	"sans-serif";
 	$rem: $value/$base;
 	font-size:$rem + rem;
 }
+@mixin font-size-em($value, $base: $font-default-size) {
+	$em: $value/$base;
+	font-size:$value + px;
+	font-size:$em + rem;
+}
+
 
 /* ==|== Type =================
 	Load CSS based font-families
