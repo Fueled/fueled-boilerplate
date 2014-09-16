@@ -141,11 +141,11 @@ On a basic level, if a style is going to be repeated in various places, a separa
 
 ### JS ###
 
-Through the magic of Grunt, we're able to maintain our Javascript in smaller partial files too, making debugging and development a whole lot easier.
+Through the magic of Gulp, we're able to maintain our Javascript in smaller partial files too, making debugging and development a whole lot easier.
 
 We attach all functionality to a global `g` object. Take a look through `assets/js/g.js`, `assets/js/partials/demo/js` and `assets/js/main/js` to read the comments on how this works.
 
-To add a new partial, simply create a new file in `assets/js/partials`, and Grunt will automatically concatenate it to the main JS file.
+To add a new partial, simply create a new file in `assets/js/partials`, and Gulp will automatically concatenate it to the main JS file.
 
 The benefits of using these small partials in this way are two fold.
 
