@@ -5,12 +5,28 @@
  */
 
 /* ==|== Buttons =================
-	Primary
+	Containers
 ========================================== */
 
 .btn {
 	background:$color-btn-primary;
 	color:$color-btn-primary-text;
+%btns {
+	& > :first-of-type {
+		margin-left:0;
+	}
+	& > :last-of-type {
+		margin-right:0;
+	}
+}
+.btns {
+	@extend %btns;
+}
+.btns--center {
+	@extend %btns;
+	text-align: center;
+}
+
 	display: inline-block;
 	padding:rem(15) rem(20);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
