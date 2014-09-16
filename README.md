@@ -95,33 +95,35 @@ Files in `ui` are reserved for more intricate declarations. Partials in the `ui`
 Say you've got a SCSS Module you want to create, for buttons. It would make absolute sense to create a `modules/_buttons.scss` file. The contents, at a very basic level, could look like this:
 
     .btn {
-        background-color:$color-btn-primary;
-        display:inline-block;
-        padding:.75em 1em;
-
+        @extend %btn;
+        background:$color-btn-primary;
+        color:$color-btn-primary-text;  
         &:hover {
-            background-color:$color-btn-primary-hover;
+            background:$color-btn-primary-hover;
+            border-color:$color-btn-primary-hover;
+            color:$color-btn-primary-text;
         }
-
         &:active,
         &:focus {
-            background-color:$color-btn-primary-active;
+            background:$color-btn-primary-active;
+            border-color:$color-btn-primary-active;
+            color:$color-btn-primary-text;
         }
     }
 
-    // Secondary
     .btn--secondary {
-        @extend .btn;
-
-        background-color:$color-btn-secondary;
-
+        @extend %btn;
+        color:$color-btn-secondary-text;
         &:hover {
-            background-color:$color-btn-secondary-hover;
+            background:$color-btn-secondary-hover;
+            border-color:$color-btn-secondary-hover;
+            color:$color-btn-secondary-text-hover;
         }
-
         &:active,
         &:focus {
-            background-color:$color-btn-secondary-active;
+            background:$color-btn-secondary-active;
+            border-color:$color-btn-secondary-active;
+            color:$color-btn-secondary-text-active;
         }
     }
 
