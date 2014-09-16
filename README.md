@@ -23,8 +23,8 @@ Follow these instructions for the **first time** you use the Boilerplate. This i
         1. `rvm get head`
         2. `rvm install 1.9.3 --with-gcc=clang`
         3. `rvm use 1.9.3`
-5. Install [SASS](http://sass-lang.com/install). SASS is the framework upon which SCSS is based. It's a Ruby gem, and so installation is fairly straight forward.
-    1. Run `sudo gem install sass` to install SASS.
+5. Install [Sass](http://sass-lang.com/install). Sass is the framework upon which SCSS is based. It's a Ruby gem, and so installation is fairly straight forward.
+    1. Run `sudo gem install sass` to install Sass.
 
 Looks like a lot, but it should be relatively straight forward!
 
