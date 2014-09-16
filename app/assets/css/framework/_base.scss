@@ -35,12 +35,4 @@ body {
 	line-height:$font-default-line-height;
 }
 
-/**
- * Revert base font to 16px when browser is <= 1024px
-**/
-
-@include respond-to(64) {
-	html {
-		font-size:100%;
-	}
 }
