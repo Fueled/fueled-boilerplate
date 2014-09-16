@@ -50,17 +50,17 @@ h2 {
 }
 
 h3 {
-	@include font-sizes-em(42);
+	@include font-size-em(42);
 	margin:em(16,42) 0 em(8,42);
 }
 
 h4 {
-	@include font-sizes-em(36);
+	@include font-size-em(36);
 	margin:em(16,36) 0 em(8,36);
 }
 
 h5 {
-	@include font-sizes-em(32);
+	@include font-size-em(32);
 	margin:em(12,32) 0 em(6,32);
 }
 
@@ -70,7 +70,7 @@ h6 {
 }
 
 p {
-	@include font-size(20);
+	@include font-size-em(20);
 	margin:0 auto em(10);
 }
 
