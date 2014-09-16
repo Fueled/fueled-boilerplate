@@ -152,3 +152,15 @@ The benefits of using these small partials in this way are two fold.
 Firstly, it encourages an OOP approach to writing Javascript, which when written correctly can hugely increase productivity between team members because the same methodologies are being used across the board.
 
 Secondly, it's much easier to find issues with code when dealing with 100 line partials, as opposed to a 2000 line full file.
+
+### Unsupported browsers
+
+Unsupported browsers is a bit of a misnomer as we’re actually using it here to describe browsers that require extra styling to __be__ supported (at least to a basic level).
+
+Since autoprefixer handles the majority of browser support, this is mainly to cater for IE8/IE7 issues (if the project dictates that level of support) and as such the separate stylesheet will only be served to IE8 and below.
+
+`unsupported.scss` will import `framework/_variables.scss`, `framework/_color.scss`, `framework/_mixins.scss` and `framework/_type.scss` by default so that these variables etc can be declared once for all stylesheets.
+
+Rules to be applied to the unsupported browsers should then be contained respectively within `framework/_unsupported.scss`, `modules/_unsupported.scss` and `ui/_unsupported.scss` depending on what they are fall-back for.
+
+For example, `modules/_typography.scss` uses `rem()` to handle margins etc which isn’t supported by IE8, so the fall-back would sit in `modules/_unsupported.scss` and be labelled with its origin (in this case _typography.scss) to make it easy to understand which rules it’s related to.
