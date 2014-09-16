@@ -502,3 +502,15 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/* ==========================================================================
+   Horizontal rules
+   ========================================================================== */
+
+/*
+ * Corrects thickness issue
+ */
+
+hr {
+    border-bottom:0;
+}

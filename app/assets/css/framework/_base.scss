@@ -35,4 +35,8 @@ body {
 	line-height:$font-default-line-height;
 }
 
+hr {
+	margin:rem(50) auto;
+	max-width:rem(600);
+	width:100%;
 }
