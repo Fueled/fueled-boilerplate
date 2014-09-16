@@ -8,9 +8,6 @@
 	Containers
 ========================================== */
 
-.btn {
-	background:$color-btn-primary;
-	color:$color-btn-primary-text;
 %btns {
 	& > :first-of-type {
 		margin-left:0;
@@ -27,18 +24,40 @@
 	text-align: center;
 }
 
+/* ==|== Buttons =================
+	Primary
+========================================== */
+%btn {
+	border:rem(2) solid $color-btn-primary;
 	display: inline-block;
 	padding:rem(15) rem(20);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
-
+	margin:0 rem(10) rem(10);
+	&:hover {
+		// Any attributes that all buttons will take
+		// i.e. transform:scale(0.95);
+	}
+	&:active,
+	&:focus {
+		// Any attributes that all buttons will take
+		// i.e. transform:scale(0.95);
+	}
+}
+.btn {
+	@extend %btn;
+	background:$color-btn-primary;
+	color:$color-btn-primary-text;	
 	&:hover {
 		background:$color-btn-primary-hover;
+		border-color:$color-btn-primary-hover;
 		color:$color-btn-primary-text;
 	}
-
 	&:active,
 	&:focus {
 		background:$color-btn-primary-active;
+		border-color:$color-btn-primary-active;
 		color:$color-btn-primary-text;
 	}
+}
+
 }
