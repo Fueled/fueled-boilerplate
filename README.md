@@ -90,7 +90,7 @@ Files in `modules` are reserved for the styling of core elements and underlying 
 
 Files in `ui` are reserved for more intricate declarations. Partials in the `ui` folder could closely mirror the naming conventions of the `modules` folder, but contain styles relating to individual elements.
 
-#### Folder Structure Example - Modules & UI ####
+#### Folder Structure Example – Modules & UI ####
 
 Say you've got a SCSS Module you want to create, for buttons. It would make absolute sense to create a `modules/_buttons.scss` file. The contents, at a very basic level, could look like this:
 
