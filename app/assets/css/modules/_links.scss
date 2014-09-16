@@ -15,11 +15,26 @@ a {
 	transition:all .25s cubic-bezier(#{$bezier-nice});
 
 	&:hover {
+	&:focus {
 		color:$color-link-primary-hover;
 	}
 
 	&:active,
 	&:focus {
+		// This animation creates a small jump when you :focus to a link
+		// which allows users to understand which is toggled when tabbed to
+		// See: http://sterli.nl/1uQSOEn
+		animation:link-focus .25s cubic-bezier(#{$bezier-nice});
+	}
 		color:$color-link-primary-active;
+	}
+}
+
+@keyframes link-focus {
+	0% {
+		transform:scale(1.1);
+	}
+	100% {
+		transform:scale(1);
 	}
 }
