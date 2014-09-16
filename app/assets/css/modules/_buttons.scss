@@ -60,4 +60,21 @@
 	}
 }
 
+/* ==|== Buttons =================
+	Secondary
+========================================== */
+.btn--secondary {
+	@extend %btn;
+	color:$color-btn-secondary-text;
+	&:hover {
+		background:$color-btn-secondary-hover;
+		border-color:$color-btn-secondary-hover;
+		color:$color-btn-secondary-text-hover;
+	}
+	&:active,
+	&:focus {
+		background:$color-btn-secondary-active;
+		border-color:$color-btn-secondary-active;
+		color:$color-btn-secondary-text-active;
+	}
 }
