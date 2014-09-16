@@ -1,3 +1,10 @@
+/**
+ * Code SCSS Partial
+ *
+ * @requires framework/_color.scss
+ */
+
+
 pre {
 	@extend %paragraph;
 	background:$color-black;

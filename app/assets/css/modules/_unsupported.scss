@@ -1,23 +1,32 @@
-/** 
- * _buttons.scss
+/**
+ * Modules fall back for unsupported browsers
+ *
+ * @requires framework/_type.scss, framework/_variables.scss
  */
+
+
+/* ==|== Buttons =================
+	Fall-back for modules/_buttons.scss
+
+	* @requires framework/_type.scss
+========================================== */
 
 .btn {
 	padding:em(15) em(20);
 }
 
-/** 
- * _code.scss
- */
+/* ==|== Code =================
+	Fall-back for modules/_code.scss
+========================================== */
 
 pre {
 	@include font-size(20);
 	padding:em(5) em(10);
 }
 
-/** 
- * _grid.scss
- */
+/* ==|== Grid =================
+	Fall-back for modules/_grid.scss
+========================================== */
 
 .grid {
   margin: 0 em(-($grid-gutter/2));
@@ -36,9 +45,9 @@ pre {
 	max-width:em($layout-max-width);
 }
 
-/** 
- * _typography.scss
- */
+/* ==|== Typography =================
+	Fall-back for modules/_typography.scss
+========================================== */
 
 h1 {
 	@include font-size-em(60);
