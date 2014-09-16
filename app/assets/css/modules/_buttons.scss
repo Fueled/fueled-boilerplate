@@ -33,12 +33,12 @@
 	padding:rem(15) rem(20);
 	transition:all .25s cubic-bezier(#{$bezier-nice});
 	margin:0 rem(10) rem(10);
-	&:hover {
+	&:hover,
+	&:focus {
 		// Any attributes that all buttons will take
 		// i.e. transform:scale(0.95);
 	}
-	&:active,
-	&:focus {
+	&:active {
 		// Any attributes that all buttons will take
 		// i.e. transform:scale(0.95);
 	}
@@ -47,13 +47,13 @@
 	@extend %btn;
 	background:$color-btn-primary;
 	color:$color-btn-primary-text;	
-	&:hover {
+	&:hover,
+	&:focus {
 		background:$color-btn-primary-hover;
 		border-color:$color-btn-primary-hover;
 		color:$color-btn-primary-text;
 	}
-	&:active,
-	&:focus {
+	&:active {
 		background:$color-btn-primary-active;
 		border-color:$color-btn-primary-active;
 		color:$color-btn-primary-text;
@@ -66,13 +66,13 @@
 .btn--secondary {
 	@extend %btn;
 	color:$color-btn-secondary-text;
-	&:hover {
+	&:hover,
+	&:focus {
 		background:$color-btn-secondary-hover;
 		border-color:$color-btn-secondary-hover;
 		color:$color-btn-secondary-text-hover;
 	}
-	&:active,
-	&:focus {
+	&:active {
 		background:$color-btn-secondary-active;
 		border-color:$color-btn-secondary-active;
 		color:$color-btn-secondary-text-active;
