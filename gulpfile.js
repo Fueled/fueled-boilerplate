@@ -17,7 +17,8 @@ var gulp = require('gulp'),
 	declare = require('gulp-declare'),
 	runSequence = require('run-sequence'),
 	connect = require('gulp-connect'),
-	webserver = require('gulp-webserver');
+	webserver = require('gulp-webserver'),
+	cmq = require('gulp-combine-media-queries');
 
 
 gulp.task('styles', function() {
@@ -29,10 +30,16 @@ gulp.task('styles', function() {
 			style: 'expanded'
 		}))
 		.pipe(autoprefixer('last 2 version', 'ie 10'))
+		.pipe(rename({
+			suffix: '.f' // Suffixed with .f so as to avoid any conflicts if RegularCSS files are called screen.min.css or screen.css
+		}))
 		.pipe(gulp.dest('public/assets/css'))
 		.pipe(rename({
 			suffix: '.min'
 		}))
+		.pipe(cmq({
+      log: true
+    }))
 		.pipe(minifycss())
 		.pipe(gulp.dest('public/assets/css'))
 		.pipe(notify({

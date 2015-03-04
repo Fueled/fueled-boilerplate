@@ -13,9 +13,10 @@ $font-default-size: 20;
 
 // Our base line height.
 $font-default-line-height: 1.5;
+$font-header-line-height: 1.2;
 
 // Our base font stacks.
-$font-stack-regular: 	"sans-serif";
+$font-stack-regular: 	Georgia, "serif";
 $font-stack-header: 	"sans-serif";
 
 /* ==|== Type =================
@@ -66,13 +67,46 @@ $font-stack-header: 	"sans-serif";
 
  * @param int $target 	The pixel value you're converting.
  * @param int $content 	The base rem value. If no value
- *						is provided, the $font-default-size value is
- *						used.
+ *											is provided, the $font-default-size value is
+ *											used.
  */
 
 @function rem($target, $content: $font-default-size) {
 	@if $target == 0 { @return 0 }
 	@return $target / $content + 0rem;
+}
+
+/**
+ * This takes a property and coresponding pixel value(s) and outputs
+ * rems and px fallback code
+
+ * @param val $property 	The CSS property that you're using (e.g. margin)
+ * @param int $values 		The value(s) that you want converted to rems (e.g
+													10, 0, 20)
+ */	
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1); // Required by rempx mixin
+}
+
+@mixin rempx($property, $values...) {
+	$base: $font-default-size;
+  $max: length($values);
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: strip-unit(nth($values, $i));
+    $pxValues: #{$pxValues + $value}px;
+    $remValues: #{$remValues + $value/$base}rem;
+    @if $i < $max {
+      $pxValues: #{$pxValues + " "};
+      $remValues: #{$remValues + " "};
+    }
+  } 
+  
+  #{$property}: $pxValues; 
+  #{$property}: $remValues; 
 }
 
 /* ==|== Type =================
@@ -90,8 +124,34 @@ $font-stack-header: 	"sans-serif";
 
 @mixin font-size($value, $base: $font-default-size) {
 	$rem: $value/$base;
-	font-size:$value + px;
 	font-size:$rem + rem;
+}
+@mixin font-size-em($value, $base: $font-default-size) {
+	$em: $value/$base;
+	font-size:$value + px;
+	font-size:$em + rem;
+}
+
+@mixin font-sizes($sizes) {
+	// Grab the base font value for setting the rems
+	$base: $font-default-size;
+		// Loop through the Map of the sizes
+    @each $font-break, $font-num in $sizes {
+    	// Set the rem value
+    	$rem: $font-num/$base;
+    	// Check if we're looking for the IE8 fallback
+    	@if $font-break == 0 {
+    		font-size:$font-num + px;
+				font-size:$rem + rem;
+    	}
+    	@else {
+    		// Stick in the min-width breakpoint from each of the maps
+    		@include respond-to-min($font-break) {
+	        font-size:$font-num + px;
+					font-size:$rem + rem;
+	      }
+    	}
+    }
 }
 
 

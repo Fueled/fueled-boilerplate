@@ -1,4 +1,4 @@
-/*! normalize.css v1.0.1 | MIT License | git.io/normalize */
+/* normalize.css v1.0.1 | MIT License | git.io/normalize */
 
 /* ==========================================================================
    HTML5 display definitions
@@ -307,6 +307,10 @@ nav ol {
     list-style: none;
     list-style-image: none;
 }
+nav > ul,
+nav > ol {
+    padding-left:0;
+}
 
 /* ==========================================================================
    Embedded content
@@ -501,4 +505,16 @@ textarea {
 table {
     border-collapse: collapse;
     border-spacing: 0;
+}
+
+/* ==========================================================================
+   Horizontal rules
+   ========================================================================== */
+
+/*
+ * Corrects thickness issue
+ */
+
+hr {
+    border-bottom:0;
 }

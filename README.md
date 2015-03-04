@@ -23,8 +23,8 @@ Follow these instructions for the **first time** you use the Boilerplate. This i
         1. `rvm get head`
         2. `rvm install 1.9.3 --with-gcc=clang`
         3. `rvm use 1.9.3`
-5. Install [SASS](http://sass-lang.com/install). SASS is the framework upon which SCSS is based. It's a Ruby gem, and so installation is fairly straight forward.
-    1. Run `sudo gem install sass` to install SASS.
+5. Install [Sass](http://sass-lang.com/install). Sass is the framework upon which SCSS is based. It's a Ruby gem, and so installation is fairly straight forward.
+    1. Run `sudo gem install sass` to install Sass.
 
 Looks like a lot, but it should be relatively straight forward!
 
@@ -90,38 +90,40 @@ Files in `modules` are reserved for the styling of core elements and underlying 
 
 Files in `ui` are reserved for more intricate declarations. Partials in the `ui` folder could closely mirror the naming conventions of the `modules` folder, but contain styles relating to individual elements.
 
-#### Folder Structure Example - Modules & UI ####
+#### Folder Structure Example – Modules & UI ####
 
 Say you've got a SCSS Module you want to create, for buttons. It would make absolute sense to create a `modules/_buttons.scss` file. The contents, at a very basic level, could look like this:
 
     .btn {
-        background-color:$color-btn-primary;
-        display:inline-block;
-        padding:.75em 1em;
-
+        @extend %btn;
+        background:$color-btn-primary;
+        color:$color-btn-primary-text;  
         &:hover {
-            background-color:$color-btn-primary-hover;
+            background:$color-btn-primary-hover;
+            border-color:$color-btn-primary-hover;
+            color:$color-btn-primary-text;
         }
-
         &:active,
         &:focus {
-            background-color:$color-btn-primary-active;
+            background:$color-btn-primary-active;
+            border-color:$color-btn-primary-active;
+            color:$color-btn-primary-text;
         }
     }
 
-    // Secondary
     .btn--secondary {
-        @extend .btn;
-
-        background-color:$color-btn-secondary;
-
+        @extend %btn;
+        color:$color-btn-secondary-text;
         &:hover {
-            background-color:$color-btn-secondary-hover;
+            background:$color-btn-secondary-hover;
+            border-color:$color-btn-secondary-hover;
+            color:$color-btn-secondary-text-hover;
         }
-
         &:active,
         &:focus {
-            background-color:$color-btn-secondary-active;
+            background:$color-btn-secondary-active;
+            border-color:$color-btn-secondary-active;
+            color:$color-btn-secondary-text-active;
         }
     }
 
@@ -141,14 +143,52 @@ On a basic level, if a style is going to be repeated in various places, a separa
 
 ### JS ###
 
-Through the magic of Grunt, we're able to maintain our Javascript in smaller partial files too, making debugging and development a whole lot easier.
+Through the magic of Gulp, we're able to maintain our Javascript in smaller partial files too, making debugging and development a whole lot easier.
 
 We attach all functionality to a global `g` object. Take a look through `assets/js/g.js`, `assets/js/partials/demo/js` and `assets/js/main/js` to read the comments on how this works.
 
-To add a new partial, simply create a new file in `assets/js/partials`, and Grunt will automatically concatenate it to the main JS file.
+To add a new partial, simply create a new file in `assets/js/partials`, and Gulp will automatically concatenate it to the main JS file.
 
 The benefits of using these small partials in this way are two fold.
 
 Firstly, it encourages an OOP approach to writing Javascript, which when written correctly can hugely increase productivity between team members because the same methodologies are being used across the board.
 
 Secondly, it's much easier to find issues with code when dealing with 100 line partials, as opposed to a 2000 line full file.
+
+### Unsupported browsers
+
+Unsupported browsers is a bit of a misnomer as we’re actually using it here to describe browsers that require extra styling to __be__ supported (at least to a basic level).
+
+Since autoprefixer handles the majority of browser support, this is mainly to cater for IE8/IE7 issues (if the project dictates that level of support) and as such the separate stylesheet will only be served to IE8 and below.
+
+`unsupported.scss` will import `framework/_variables.scss`, `framework/_color.scss`, `framework/_mixins.scss` and `framework/_type.scss` by default so that these variables etc can be declared once for all stylesheets.
+
+Rules to be applied to the unsupported browsers should then be contained respectively within `framework/_unsupported.scss`, `modules/_unsupported.scss` and `ui/_unsupported.scss` depending on what they are fall-back for.
+
+### Example – _typography.scss
+
+For example, `modules/_typography.scss` uses `rem()` to handle margins etc which isn’t supported by IE8, so the fall-back would sit in `modules/_unsupported.scss` and be labelled with its origin (in this case _typography.scss) to make it easy to understand which rules it’s related to.
+
+### License
+
+The MIT License (MIT)
+
+Copyright (c) 2013-2014 Fueled (fueled.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

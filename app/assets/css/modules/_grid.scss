@@ -1,58 +1,68 @@
 /**
  * Grid SCSS Partial
+ *
+ * @requires framework/_variables.scss
+ * 
  */
 
 /**
- *
- * Syntax for grids
- *
- * 	<div class="grid">
- * 		<div class="col col--3">
- *			<p>Lorem Ipsum</p>
- * 		<div><!--
- * 	 --><div class="col col--6">
- * 			<p>Pellentesque elim</p>
- * 		</div><!--
- * 	 --><div class="col col--3">
- * 			<p>Dolor Sit</p>
- * 		</div>
- * 	</div>
- *
- * The comments immediately after each <div class="col"></div> element
- * are vital for the grid to work.
- *
- */
+*   ##  HTML
+*       The comments immediately after each <div class="grid__unit"></div> element
+*       are vital for the grid to work.
+*
+* 	<div class="g module-name">
+* 		<div class="grid__unit">
+*			<p>Lorem Ipsum</p>
+* 		<div><!--
+* 	 --><div class="grid__unit">
+* 			<p>Pellentesque elim</p>
+* 		</div><!--
+* 	 --><div class="grid__unit">
+* 			<p>Dolor Sit</p>
+* 		</div>
+* 	</div>
+*
+*
+*   ##  CSS (Sass)
+*       Grid units are controlled by their parent element. In the example
+*       the parent is .module-name.
+*       The grid is then declared for min-width breakpoints using a Sass map
+*       defaulting at 100% at its smallest. This allows as many breakpoints to be
+*       declared per grid set.
+*       If multiple modules use the same grid layout, just add more module-names
+*       To the parent selector as shown below:
+*
+*   .grid__unit {
+*       .module-name &,
+*       .module-name-2 & { 
+*           @include grid-column((450: 1, 750: 2, 950: 3, 1200: 6));
+*       }    
+*       .module-name-3 & { 
+*           @include grid-column((450: 1, 950: 2, 1200: 4));
+*       }    
+*   }
+*/
 
-$grid-max-width: $layout-max-width;
-$grid-columns: 12;
-$grid-margin: 24;
-
-$grid-margin-percentage: percentage($grid-margin / $grid-max-width);
-$grid-column-width: ($grid-max-width - ($grid-margin * ($grid-columns - 1))) / $grid-columns;
-$grid-column-percentage: percentage($grid-column-width / $grid-max-width);
-
-
-/* ==|== Grid =================
-	Columns
-========================================== */
-
-
-
-.col {
-	display: inline-block;
-	vertical-align: top;
-
-	+ .col {
-		margin-left: $grid-margin-percentage;
-	}
+@mixin grid-column($cols) {
+    @each $col-break, $col-num in $cols {
+        @include respond-to-min($col-break) {
+            width: (100%/ $col-num);
+        }
+    }
 }
 
-/* ==|== Columns =================
-	12
-========================================== */
-
-@for $i from 1 through $grid-columns {
-	.col--#{$i} {
-		width: ($grid-column-percentage * $i) + ($grid-margin-percentage * ($i - 1));
-	}
+.grid {
+    margin: 0 rem(-($grid-gutter/2));
+}
+.grid__unit {
+    display: inline-block;
+    padding: 0 rem($grid-gutter/2);
+    vertical-align: top;
+    width:100%;
+    .module-name & {
+        @include grid-column(($bp-tiny: 1, $bp-small: 2, $bp-large: 4));
+    }
+    .module-name-2 & {
+        @include grid-column(($bp-tiny: 2, $bp-small: 2, $bp-mid: 3, $bp-large: 6));
+    }
 }

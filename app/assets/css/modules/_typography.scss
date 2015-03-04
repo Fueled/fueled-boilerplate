@@ -1,7 +1,7 @@
 /**
  * Typography SCSS Partial
  *
- * @requires framework/_type.scss
+ * @requires framework/_type.scss, framework/_variables.scss
  */
 
 /* ==|== Typography =================
@@ -28,46 +28,52 @@ $fonts-to-load-style: normal, italic;
 ========================================== */
 
 h1, h2, h3, h4, h5, h6 {
+	// @extend %hyphenated;
+	font-family:$font-stack-header; // Exclude if entire site based in one font-family
 	font-weight:normal;
-	line-height:1;
+	line-height:$font-header-line-height;
 }
 
 h1 {
-	@include font-size(60);
-	margin:em(12, 60) 0 em(24, 60);
+	@include font-sizes((0: 48, $bp-tiny: 54, $bp-small: 60));
+	margin:rem(24) 0 rem(12);
 }
 
 h2 {
-	@include font-size(48);
-	margin:rem(12, 48) 0 em(24, 48);
+	@include font-sizes((0: 40, $bp-tiny: 46, $bp-small: 52));
+	margin:rem(24) 0 rem(12);
 }
 
 h3 {
-	@include font-size(38);
-	margin:em(8, 38) 0 em(16, 38);
+	@include font-sizes((0: 32, $bp-tiny: 38, $bp-small: 42));
+	margin:rem(16) 0 rem(8);
 }
 
 h4 {
-	@include font-size(30);
-	margin:em(8, 30) 0 em(16, 30);
+	@include font-sizes((0: 26, $bp-tiny: 32, $bp-small: 36));
+	margin:rem(16) 0 rem(8);
 }
 
 h5 {
-	@include font-size(24);
-	margin:em(12, 24) 0 em(12, 24);
+	@include font-sizes((0: 20, $bp-tiny: 26, $bp-small: 32));
+	margin:rem(12) 0 rem(6);
 }
 
 h6 {
-	@include font-size(20);
-	margin:em(10, 20) 0 em(10, 20);
+	@include font-sizes((0: 18, $bp-tiny: 21, $bp-small: 24));
+	margin:rem(12) 0 rem(6);
 }
 
 /* ==|== Typography =================
 	Paragraphs
 ========================================== */
 
+%paragraph {
+	@include font-sizes((0: 16, $bp-tiny: 18, $bp-small: 20));
+	margin:0 auto rem(10);
+}
 p {
-	margin:1em auto;
+	@extend %paragraph;
 }
 
 .indented {

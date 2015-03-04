@@ -24,15 +24,15 @@ $color-black: #1b1b1b;
 	Elements
 ========================================== */
 
-$color-background:$color-white;
-$color-text: $color-black;
+$color-background:	$color-white;
+$color-text: 				$color-black;
 
 /* ==|== Colors =================
    Links
 ====================================== */
 
-$color-link-primary: #ae0000;
-$color-link-primary-hover: #00ae00;
+$color-link-primary: 				#ae0000;
+$color-link-primary-hover: 	#00ae00;
 $color-link-primary-active: #0000ae;
 
 
@@ -40,10 +40,17 @@ $color-link-primary-active: #0000ae;
    Buttons
 ====================================== */
 
-$color-btn-primary: #ae0000;
-$color-btn-primary-hover: #00ae00;
-$color-btn-primary-active: #0000ae;
-$color-btn-primary-text: #fff;
+$color-btn-primary: 									#ae0000;
+$color-btn-primary-hover: 						#00ae00;
+$color-btn-primary-active: 						#0000ae;
+$color-btn-primary-text: 							#fff;
+
+$color-btn-secondary: 								#fff;
+$color-btn-secondary-hover: 					#00ae00;
+$color-btn-secondary-active: 					#0000ae;
+$color-btn-secondary-text: 						#ae0000;
+$color-btn-secondary-text-hover: 			#fff;
+$color-btn-secondary-text-active: 		#fff;
 
 /* ==|== Colors =================
 	Social
