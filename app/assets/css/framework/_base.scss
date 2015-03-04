@@ -38,7 +38,7 @@ body {
  * Revert base font to 16px when browser is <= 1024px
 **/
 
-@include respond-to(64) {
+@include max-width(1024) {
 	html {
 		font-size:100%;
 	}

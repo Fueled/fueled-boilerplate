@@ -28,28 +28,6 @@
 	}
 }
 
-@mixin respond-to($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (max-width:$em + $unit) {
-		@content;
-	}
-}
-@mixin respond-to-min($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (min-width:$em + $unit) {
-		@content;
-	}
-}
-@mixin respond-to-height($breakpoint) {
-	$em: ($breakpoint / 16);
-	$unit: 'em';
-	@media only screen and (max-height:$em + $unit) {
-		@content;
-	}
-}
-
 @mixin respond-to-min-height($breakpoint) {
 	$em: ($breakpoint / 16);
 	$unit: 'em';
@@ -57,6 +35,67 @@
 		@content;
 	}
 }
+
+@mixin min-width($w) {
+	@media only screen and (min-width: ($w / 16) + em) {
+		@content;
+	}
+}
+
+@mixin max-width($w) {
+	@media only screen and (max-width: ($w / 16) + em) {
+		@content;
+	}
+}
+
+@mixin min-height($h) {
+	@media only screen and (min-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin max-height($h) {
+	@media only screen and (max-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin min-width-max-width($miw, $maw) {
+	@media only screen and (min-width: ($miw / 16) + em) and (max-width: ($maw / 16) + em) {
+		@content;
+	}
+}
+
+@mixin min-width-min-height($w, $h) {
+	@media only screen and (min-width: ($w / 16) + em) and (min-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin min-width-max-height($w, $h) {
+	@media only screen and (min-width: ($w / 16) + em) and (max-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin max-width-min-height($w, $h) {
+	@media only screen and (max-width: ($w / 16) + em) and (min-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin max-width-max-height($w, $h) {
+	@media only screen and (max-width: ($w / 16) + em) and (max-height: ($h / 16) + em) {
+		@content;
+	}
+}
+
+@mixin min-height-max-height($mih, $mah) {
+	@media only screen and (min-height: ($mih / 16) + em) and (max-height: ($mah / 16) + em) {
+		@content;
+	}
+}
+
 
 
 @mixin orientation($o: 'portrait') {
